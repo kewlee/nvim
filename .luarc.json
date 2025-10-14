@@ -1,5 +1,11 @@
 {
-  "diagnostics.globals": ["vim"],
+  "diagnostics.globals": [
+    "MiniDiff",
+    "MiniGit",
+    "MiniSessions",
+    "MiniStatusline",
+    "vim"
+  ],
   "runtime.path": ["lua/?.lua", "lua/?/init.lua"],
   "runtime.version": "LuaJIT",
   "workspace.checkThirdParty": false,

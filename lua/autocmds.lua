@@ -4,6 +4,8 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
     desc = "Close buffer with 'q'",
     pattern = {
+        "diff",
+        "git",
         "help",
         "man",
         "qf",
