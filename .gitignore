@@ -1,2 +1,6 @@
 # Configuration
 lsp/*.lua
+
+# lazy.nvim
+lazy-lock.json
+lua/plugins/override/*.lua
