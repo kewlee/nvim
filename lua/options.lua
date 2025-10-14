@@ -1,5 +1,8 @@
 vim.o.completeopt = "menu,menuone,noinsert"
 vim.o.fixeol = false
+vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.o.foldlevel = 99
+vim.o.foldmethod = "expr"
 vim.o.hlsearch = false
 vim.o.ignorecase = true
 vim.o.laststatus = 3
