@@ -36,19 +36,21 @@ vim.api.nvim_create_autocmd("LspAttach", {
         local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
 
         if client:supports_method("textDocument/completion") then
-            vim.keymap.set("i", "<Tab>", function()
-                return vim.fn.pumvisible() ~= 0 and "<C-y>" or "<Tab>"
-            end, { buffer = ev.buf, expr = true })
+            if not pcall(require, "blink.cmp") then
+                vim.keymap.set("i", "<Tab>", function()
+                    return vim.fn.pumvisible() ~= 0 and "<C-y>" or "<Tab>"
+                end, { expr = true })
 
-            client.server_capabilities.completionProvider.triggerCharacters =
-                triggers
+                client.server_capabilities.completionProvider.triggerCharacters =
+                    triggers
 
-            vim.lsp.completion.enable(
-                true,
-                client.id,
-                ev.buf,
-                { autotrigger = true }
-            )
+                vim.lsp.completion.enable(
+                    true,
+                    client.id,
+                    ev.buf,
+                    { autotrigger = true }
+                )
+            end
         end
     end,
     desc = "Configure LSP client on buffer attach",
