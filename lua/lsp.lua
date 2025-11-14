@@ -41,6 +41,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
                     return vim.fn.pumvisible() ~= 0 and "<C-y>" or "<Tab>"
                 end, { expr = true })
 
+                vim.keymap.set("i", "<CR>", function()
+                    return vim.fn.pumvisible() ~= 0 and "<C-e><CR>" or "<CR>"
+                end, { expr = true })
+
                 client.server_capabilities.completionProvider.triggerCharacters =
                     triggers
 
