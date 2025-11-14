@@ -3,7 +3,7 @@ vim.cmd("colorscheme slate")
 local highlights = {
     Identifier = { bg = "none" },
     Normal = { bg = "none" },
-    PMenu = { bg = "#2f2f2f" },
+    Pmenu = { bg = "#2f2f2f" },
     SignColumn = { bg = "none" },
     StatusLine = { bg = "none" },
     StatusLineNC = { bg = "none" },
