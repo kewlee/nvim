@@ -80,7 +80,14 @@ return {
                 "<Leader>ss",
                 function()
                     if vim.v.this_session == "" then
-                        vim.notify("No session loaded", vim.log.levels.ERROR)
+                        vim.ui.input(
+                            { prompt = "Enter new session name: " },
+                            function(session_name)
+                                if session_name then
+                                    MiniSessions.write(session_name)
+                                end
+                            end
+                        )
                     else
                         MiniSessions.write()
                     end
