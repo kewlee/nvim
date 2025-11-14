@@ -72,13 +72,6 @@ return {
         end,
     },
 
-    -- Icons
-    {
-        "nvim-mini/mini.icons",
-        event = "VimEnter",
-        opts = {},
-    },
-
     -- Sessions
     {
         "nvim-mini/mini.sessions",
