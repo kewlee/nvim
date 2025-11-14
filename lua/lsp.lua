@@ -64,7 +64,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 vim.api.nvim_create_autocmd("LspProgress", {
     ---@param ev {data: {client_id: integer, params: lsp.ProgressParams}}
     callback = function(ev)
-        local icon = ev.data.params.value.kind == "end" and "  "
+        local icon = ev.data.params.value.kind == "end" and " "
             or progress[math.floor(vim.uv.hrtime() / (1e6 * 80)) % #progress + 1]
 
         vim.notify(icon .. vim.lsp.status(), vim.log.levels.INFO)
