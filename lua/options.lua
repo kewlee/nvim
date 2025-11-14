@@ -24,3 +24,5 @@ vim.o.writebackup = false
 vim.opt.fillchars = {
     eob = " ",
 }
+
+vim.opt.shortmess:append("c")
